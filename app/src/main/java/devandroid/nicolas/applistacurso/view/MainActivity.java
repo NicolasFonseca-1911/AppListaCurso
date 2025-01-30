@@ -14,6 +14,10 @@ import devandroid.nicolas.applistacurso.model.Pessoa;
 public class MainActivity extends AppCompatActivity {
 
     Pessoa pessoa;
+    Pessoa outrapessoa;
+
+    String dadosPessoa;  //pascalCase - camelCase
+    String dadosOutraPessoa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +31,39 @@ public class MainActivity extends AppCompatActivity {
         });
 
         pessoa = new Pessoa();
+
+        pessoa.setPrimeiroNome("Ncolas");
+        pessoa.setSobreNome("Fonseca");
+        pessoa.setCursoDesejado("Android");
+        pessoa.setTelefoneContato("45-998424175");
+
+        outrapessoa = new Pessoa();
+
+        outrapessoa.setPrimeiroNome("Domicio");
+        outrapessoa.setSobreNome("Fonseca");
+        outrapessoa.setCursoDesejado("Java");
+        outrapessoa.setTelefoneContato("11-223355444");
+
+        dadosPessoa = "Primeiro nome: ";
+        dadosPessoa += pessoa.getPrimeiroNome();
+        dadosPessoa += " Sobrenome: ";
+        dadosPessoa += pessoa.getSobreNome();
+        dadosPessoa += " Curso Desejado: ";
+        dadosPessoa += pessoa.getCursoDesejado();
+        dadosPessoa += " Telefone de Contato";
+        dadosPessoa += pessoa.getTelefoneContato();
+
+        dadosOutraPessoa = "Primeiro nome: ";
+        dadosOutraPessoa += outrapessoa.getPrimeiroNome();
+        dadosOutraPessoa += " Sobrenome: ";
+        dadosOutraPessoa += outrapessoa.getSobreNome();
+        dadosOutraPessoa += " Curso Desejado: ";
+        dadosOutraPessoa += outrapessoa.getCursoDesejado();
+        dadosOutraPessoa += " Telefone de Contato";
+        dadosOutraPessoa += outrapessoa.getTelefoneContato();
+
+
+        int parada = 0;
 
     }
 }
