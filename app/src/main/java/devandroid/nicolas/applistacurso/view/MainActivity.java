@@ -21,9 +21,6 @@ public class MainActivity extends AppCompatActivity {
     Pessoa pessoa;
     Pessoa outrapessoa;
 
-    String dadosPessoa;  //pascalCase - camelCase
-    String dadosOutraPessoa;
-
     EditText editPrimeiroNome;
     EditText editSobrenomeAluno;
     EditText editNomeCurso;
@@ -47,16 +44,11 @@ public class MainActivity extends AppCompatActivity {
 
         pessoa = new Pessoa();
 
-        pessoa.setPrimeiroNome("Ncolas");
-        pessoa.setSobreNome("Fonseca");
-        pessoa.setCursoDesejado("Android");
-        pessoa.setTelefoneContato("45-998424175");
-
         outrapessoa = new Pessoa();
 
         outrapessoa.setPrimeiroNome("Domicio");
         outrapessoa.setSobreNome("Fonseca");
-        outrapessoa.setCursoDesejado("Java");
+        outrapessoa.setCursoDesejado("Capinar Deitado");
         outrapessoa.setTelefoneContato("11-223355444");
 
         editPrimeiroNome = findViewById(R.id.editPrimeiroNome);
@@ -68,10 +60,10 @@ public class MainActivity extends AppCompatActivity {
         btnSalvar = findViewById(R.id.btnSalvar);
         btnFinalizar = findViewById(R.id.btnFinalizar);
 
-        editPrimeiroNome.setText(pessoa.getPrimeiroNome());
-        editSobrenomeAluno.setText(pessoa.getSobreNome());
-        editNomeCurso.setText(pessoa.getCursoDesejado());
-        editTelefoneContato.setText(pessoa.getTelefoneContato());
+        editPrimeiroNome.setText(outrapessoa.getPrimeiroNome());
+        editSobrenomeAluno.setText(outrapessoa.getSobreNome());
+        editNomeCurso.setText(outrapessoa.getCursoDesejado());
+        editTelefoneContato.setText(outrapessoa.getTelefoneContato());
 
         btnLimpar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,15 +72,13 @@ public class MainActivity extends AppCompatActivity {
                 editSobrenomeAluno.setText("");
                 editNomeCurso.setText("");
                 editTelefoneContato.setText("");
-
             }
-
         });
 
         btnFinalizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this,"Volte Sempre", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "Volte Sempre", Toast.LENGTH_LONG).show();
                 finish();
             }
         });
@@ -102,32 +92,11 @@ public class MainActivity extends AppCompatActivity {
                 pessoa.setCursoDesejado(editNomeCurso.getText().toString());
                 pessoa.setTelefoneContato(editTelefoneContato.getText().toString());
 
-                Toast.makeText(MainActivity.this,"Salvo"+pessoa.toString(), Toast.LENGTH_LONG).show();
-
+                Toast.makeText(MainActivity.this, "Salvo" + pessoa.toString(), Toast.LENGTH_LONG).show();
             }
         });
 
-/*
-        dadosPessoa = "Primeiro nome: ";
-        dadosPessoa += pessoa.getPrimeiroNome();
-        dadosPessoa += " Sobrenome: ";
-        dadosPessoa += pessoa.getSobreNome();
-        dadosPessoa += " Curso Desejado: ";
-        dadosPessoa += pessoa.getCursoDesejado();
-        dadosPessoa += " Telefone de Contato";
-        dadosPessoa += pessoa.getTelefoneContato();
-
-        dadosOutraPessoa = "Primeiro nome: ";
-        dadosOutraPessoa += outrapessoa.getPrimeiroNome();
-        dadosOutraPessoa += " Sobrenome: ";
-        dadosOutraPessoa += outrapessoa.getSobreNome();
-        dadosOutraPessoa += " Curso Desejado: ";
-        dadosOutraPessoa += outrapessoa.getCursoDesejado();
-        dadosOutraPessoa += " Telefone de Contato";
-        dadosOutraPessoa += outrapessoa.getTelefoneContato();*/
-
-        Log.i("POOAndroid","Objeto pessoa: "+pessoa.toString());
-        Log.i("POOAndroid","Objeto outrapessoa: "+outrapessoa.toString());
-
+        Log.i("POOAndroid", "Objeto pessoa: " + pessoa.toString());
+        Log.i("POOAndroid", "Objeto outrapessoa: " + outrapessoa.toString());
     }
 }
