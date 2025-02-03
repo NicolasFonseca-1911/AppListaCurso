@@ -55,27 +55,25 @@ public class MainActivity extends AppCompatActivity {
         controller.toString();
 
         pessoa = new Pessoa();
+        pessoa.setPrimeiroNome(preferences.getString("primeiroNome","NA"));
+        pessoa.setSobreNome(preferences.getString("sobreNome","NA"));
+        pessoa.setCursoDesejado(preferences.getString("nomeCurso","NA"));
+        pessoa.setTelefoneContato(preferences.getString("telefoneContato","NA"));
 
-        outrapessoa = new Pessoa();
-
-        outrapessoa.setPrimeiroNome("Domicio");
-        outrapessoa.setSobreNome("Fonseca");
-        outrapessoa.setCursoDesejado("Capinar Deitado");
-        outrapessoa.setTelefoneContato("11-223355444");
 
         editPrimeiroNome = findViewById(R.id.editPrimeiroNome);
         editSobrenomeAluno = findViewById(R.id.editSobrenomeAluno);
         editNomeCurso = findViewById(R.id.editNomeCurso);
         editTelefoneContato = findViewById(R.id.editTelefoneContato);
 
+        editPrimeiroNome.setText(pessoa.getPrimeiroNome());
+        editSobrenomeAluno.setText(pessoa.getSobreNome());
+        editNomeCurso.setText(pessoa.getCursoDesejado());
+        editTelefoneContato.setText(pessoa.getTelefoneContato());
+
         btnLimpar = findViewById(R.id.btnLimpar);
         btnSalvar = findViewById(R.id.btnSalvar);
         btnFinalizar = findViewById(R.id.btnFinalizar);
-
-        editPrimeiroNome.setText(outrapessoa.getPrimeiroNome());
-        editSobrenomeAluno.setText(outrapessoa.getSobreNome());
-        editNomeCurso.setText(outrapessoa.getCursoDesejado());
-        editTelefoneContato.setText(outrapessoa.getTelefoneContato());
 
         btnLimpar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Salvo" + pessoa.toString(), Toast.LENGTH_LONG).show();
 
                 listaVip.putString("primeiroNome",pessoa.getPrimeiroNome());
-                listaVip.putString("sobreNOme",pessoa.getSobreNome());
+                listaVip.putString("sobreNome",pessoa.getSobreNome());
                 listaVip.putString("nomeCurso",pessoa.getCursoDesejado());
                 listaVip.putString("telefoneContato",pessoa.getTelefoneContato());
                 listaVip.apply();
@@ -117,6 +115,5 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Log.i("POOAndroid", "Objeto pessoa: " + pessoa.toString());
-        Log.i("POOAndroid", "Objeto outrapessoa: " + outrapessoa.toString());
     }
 }
