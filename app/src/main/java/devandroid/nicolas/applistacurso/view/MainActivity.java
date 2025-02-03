@@ -120,4 +120,3 @@ public class MainActivity extends AppCompatActivity {
         Log.i("POOAndroid", "Objeto outrapessoa: " + outrapessoa.toString());
     }
 }
-//erro resolvido
