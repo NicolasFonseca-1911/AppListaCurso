@@ -20,9 +20,6 @@ import devandroid.nicolas.applistacurso.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
 
-    SharedPreferences preferences;
-    SharedPreferences.Editor listaVip;
-    public static final String NOME_PREFERENCES = "pref_listavip";
 
     PessoaController controller;
     Pessoa pessoa;
@@ -49,18 +46,12 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        preferences = getSharedPreferences(NOME_PREFERENCES,0);
-        listaVip = preferences.edit();
 
-        controller = new PessoaController();
+        controller = new PessoaController(MainActivity.this);
         controller.toString();
 
         pessoa = new Pessoa();
-        pessoa.setPrimeiroNome(preferences.getString("primeiroNome","NA"));
-        pessoa.setSobreNome(preferences.getString("sobreNome","NA"));
-        pessoa.setCursoDesejado(preferences.getString("nomeCurso","NA"));
-        pessoa.setTelefoneContato(preferences.getString("telefoneContato","NA"));
-
+        controller.buscar(pessoa);
 
         editPrimeiroNome = findViewById(R.id.editPrimeiroNome);
         editSobrenomeAluno = findViewById(R.id.editSobrenomeAluno);
@@ -84,8 +75,7 @@ public class MainActivity extends AppCompatActivity {
                 editNomeCurso.setText("");
                 editTelefoneContato.setText("");
 
-                listaVip.clear();
-                listaVip.apply();
+                controller.limpar();
 
             }
         });
@@ -109,11 +99,6 @@ public class MainActivity extends AppCompatActivity {
 
                 Toast.makeText(MainActivity.this, "Salvo" + pessoa.toString(), Toast.LENGTH_LONG).show();
 
-                listaVip.putString("primeiroNome",pessoa.getPrimeiroNome());
-                listaVip.putString("sobreNome",pessoa.getSobreNome());
-                listaVip.putString("nomeCurso",pessoa.getCursoDesejado());
-                listaVip.putString("telefoneContato",pessoa.getTelefoneContato());
-                listaVip.apply();
 
                 controller.salvar(pessoa);
             }
