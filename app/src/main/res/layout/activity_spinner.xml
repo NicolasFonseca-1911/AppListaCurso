@@ -98,24 +98,24 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/btnLimpar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="48dp"
-                android:layout_marginEnd="176dp"
-                android:layout_marginStart="16dp"
-                android:backgroundTint="@color/corBotoes"
-                android:text="@string/txt_button_limpar" />
+                <Button
+                    android:id="@+id/btnLimpar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="48dp"
+                    android:layout_marginEnd="176dp"
+                    android:backgroundTint="@color/corBotoes"
+                    android:text="@string/txt_button_limpar" />
 
-            <Button
-                android:id="@+id/btnSalvar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="48dp"
-                android:layout_marginEnd="16dp"
-                android:backgroundTint="@color/corBotoes"
-                android:text="@string/txt_button_salvar" />
+                <Button
+                    android:id="@+id/btnSalvar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="48dp"
+                    android:layout_marginEnd="16dp"
+                    android:backgroundTint="@color/corBotoes"
+                    android:text="@string/txt_button_salvar" />
 
             </LinearLayout>
 
